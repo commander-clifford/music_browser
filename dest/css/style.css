@@ -1,0 +1,534 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'San Francisco';
+  src: url("../fonts/sanfranciscodisplay-regular-webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/sanfranciscodisplay-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/sanfranciscodisplay-regular-webfont.woff2") format("woff2"), url("../fonts/sanfranciscodisplay-regular-webfont.woff") format("woff"), url("../fonts/sanfranciscodisplay-regular-webfont.ttf") format("truetype"), url("../fonts/sanfranciscodisplay-regular-webfont.svg#svgFontName") format("svg");
+  /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url("../fonts/fontello.eot?38352341");
+  src: url("../fonts/fontello.eot?38352341#iefix") format("embedded-opentype"), url("../fonts/fontello.woff2?38352341") format("woff2"), url("../fonts/fontello.woff?38352341") format("woff"), url("../fonts/fontello.ttf?38352341") format("truetype"), url("../fonts/fontello.svg?38352341#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-search:before {
+  content: '\e800';
+}
+
+/* '' */
+
+.icon-menu:before {
+  content: '\e801';
+}
+
+/* '' */
+
+.icon-close:before {
+  content: '\e802';
+}
+
+/* '' */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "San Francisco", Helvetica, sans-serif;
+  background: linear-gradient(rgba(20, 21, 25, 0.93), rgba(20, 21, 25, 0.93)), url("../img/big-bg.png");
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+body a {
+  color: white;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.nav {
+  padding: 5px 0;
+  background-color: rgba(0, 0, 0, 0.38);
+}
+
+.nav-mobile:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.nav-toggle {
+  float: left;
+}
+
+.nav-toggle a {
+  display: block;
+}
+
+.nav-toggle .icon {
+  font-size: 2em;
+  margin-left: .5em;
+  border-radius: 50%;
+  display: block;
+}
+
+.nav-toggle .icon:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-search {
+  float: right;
+}
+
+.nav-search a {
+  display: block;
+}
+
+.nav-search .icon {
+  font-size: 2em;
+  margin-right: .5em;
+  border-radius: 50%;
+  display: block;
+}
+
+.nav-search .icon:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-bar {
+  position: absolute;
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.95);
+  overflow: hidden;
+}
+
+.nav-bar > a {
+  display: block;
+  color: white;
+  line-height: 60px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  padding-left: 2em;
+  height: 0;
+}
+
+.nav-bar > a.search {
+  display: none;
+}
+
+.nav-bar > a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.main {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.main-headline {
+  font-size: 1em;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: 40px;
+}
+
+.main .titles-list-wrapper {
+  -ms-flex-positive: unset;
+  flex-grow: unset;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.main .titles-list ul {
+  padding: 0;
+  margin: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.main .titles-list ul li {
+  list-style-type: none;
+  width: 100%;
+  padding: .5em;
+}
+
+.main .titles-list ul li a {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-line-pack: end;
+  align-content: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  padding: 12px;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.75);
+  height: 205px;
+}
+
+.main .titles-list ul li a:hover {
+  outline: 1px solid rgba(254, 243, 120, 0.3);
+  box-shadow: 0px 2px 10px 0px rgba(254, 243, 120, 0.3);
+}
+
+.main .titles-list ul li a h2 {
+  width: 100%;
+  margin: 0 0;
+  font-weight: 100;
+  font-size: 1.3125em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.main .titles-list ul li a p {
+  width: 100%;
+  margin: 0 0;
+  line-height: 1.8;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.main .top-songs-list-wrapper {
+  -ms-flex-positive: unset;
+  flex-grow: unset;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  border: none;
+  margin-top: 1em;
+}
+
+.main .top-songs-list ul {
+  padding: 0;
+  margin: 0;
+}
+
+.main .top-songs-list ul li {
+  list-style-type: none;
+}
+
+.main .top-songs-list ul li:nth-child(n+4) {
+  height: 0;
+  overflow: hidden;
+}
+
+.main .top-songs-list ul li a {
+  display: block;
+  text-decoration: none;
+  padding: 10px 40px;
+}
+
+.main .top-songs-list ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.main .top-songs-list figure {
+  padding: 0;
+  margin: 0;
+}
+
+.main .top-songs-list figure:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.main .top-songs-list figure img {
+  width: 44px;
+  border-radius: 50%;
+  float: left;
+}
+
+.main .top-songs-list figure figcaption {
+  float: left;
+  padding-left: 1em;
+  width: calc(100% - 44px);
+}
+
+.main .top-songs-list figure figcaption h2,
+.main .top-songs-list figure figcaption p {
+  padding: 0;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.main .top-songs-list figure figcaption h2 {
+  font-size: 1em;
+  font-weight: 100;
+  color: #FEF378;
+}
+
+.main .top-songs-list .button.expand {
+  display: block;
+  border-radius: 50px;
+  background-color: #FEF378;
+  color: black;
+  width: calc(100% - 80px);
+  height: 50px;
+  border: none;
+  margin: 40px auto;
+  font-size: 1em;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+.main .top-songs-list .button.expand:hover,
+.main .top-songs-list .button.expand:focus {
+  background-color: rgba(254, 243, 120, 0.9);
+}
+
+.footer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 60px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.625em;
+}
+
+.footer p a {
+  padding: 0 10px;
+  text-decoration: none;
+  color: #FEF378;
+}
+
+.footer p a:hover {
+  text-decoration: underline;
+}
+
+.orange-text {
+  color: #CBAF92;
+}
+
+.grey-text {
+  color: #202020;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media screen and (min-width: 576px) {
+  .main .titles-list ul {
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .main .titles-list ul li {
+    width: 50%;
+  }
+
+  .footer {
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    padding: 0;
+  }
+
+  .nav-mobile {
+    display: none;
+  }
+
+  .nav-bar {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    max-height: unset;
+    background-color: transparent;
+  }
+
+  .nav-bar > a.search {
+    display: block;
+  }
+
+  .nav-bar > a {
+    padding-left: 2em;
+    padding-right: 2em;
+    height: auto;
+  }
+
+  .main {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-top: 80px;
+  }
+
+  .main .titles-list-wrapper {
+    padding-right: 40px;
+    -ms-flex-positive: 8;
+    flex-grow: 8;
+    -ms-flex-preferred-size: 8.333%;
+    flex-basis: 8.333%;
+  }
+
+  .main .titles-list ul {
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .main .titles-list ul li {
+    width: 100%;
+  }
+
+  .main .top-songs-list-wrapper {
+    -ms-flex-positive: 4;
+    flex-grow: 4;
+    -ms-flex-preferred-size: 8.333%;
+    flex-basis: 8.333%;
+  }
+
+  .main .top-songs-list-wrapper {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .main .top-songs-list ul li:nth-child(n+4) {
+    height: auto;
+    opacity: 1;
+  }
+
+  .main .top-songs-list .button.expand {
+    display: none;
+  }
+
+  .footer {
+    padding-top: 60px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    width: 90%;
+  }
+
+  .nav-bar > a {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+
+  .main .titles-list ul {
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .main .titles-list ul li {
+    width: 50%;
+    padding: 1em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nav-bar > a {
+    padding-left: 3.5em;
+    padding-right: 3.5em;
+  }
+}

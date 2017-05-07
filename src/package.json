@@ -1,0 +1,22 @@
+{
+  "name": "akqa-developer-test",
+  "version": "1.0.0",
+  "description": "Your code should live here.",
+  "author": "AKQA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-group-css-media-queries": "^1.2.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-modernizr": "^1.0.0-alpha",
+    "gulp-sass": "^3.1.0",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1"
+  }
+}
