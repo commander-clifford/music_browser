@@ -54,4 +54,7 @@
 		gulp.watch('fonts/*', ['fonts']);
 	});
 
+	gulp.task('build', [ 'sass', 'html', 'jsLint', 'javascript', 'imgs', 'fonts' ]);
+
+
 }());
